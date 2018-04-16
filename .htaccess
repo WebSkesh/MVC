@@ -1,0 +1,8 @@
+
+# перенаправляємо всі наші запити на web директорію
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule ^$ web/ [L]     # прямий запит
+    RewriteRule (.*) web/$1 [L] # запит з параметрами
+</IfModule>

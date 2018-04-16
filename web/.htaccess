@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+
+    # якщо запит не являється файлом
+    RewriteCond %{REQUEST_FILENAME} !-f
+
+    # і запит не являється директорією
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # то передаємо обробку на index.php
+    RewriteRule ^(.*)$ index.php [PT,L]
+    # це єдине місце входу в наш додаток
+
+</IfModule>
